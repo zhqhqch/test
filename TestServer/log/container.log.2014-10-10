@@ -1,0 +1,32 @@
+[2;32m2014-10-10 17:24:52,869 - INFO  [main:Container@87] - cache was init.Resource [name=null, host=192.168.1.252, port=11111]
+[m[2;32m2014-10-10 17:24:52,944 - INFO  [main:Container@109] - rmi was init.Resource [name=null, host=192.168.1.252, port=10001]
+[m[2;32m2014-10-10 17:24:53,128 - INFO  [main:GameServer@89] - game server was init.port:10002, protocol:json
+[m[2;32m2014-10-10 17:24:53,143 - INFO  [main:Container@119] - remote server was init.Resource [name=system, host=192.168.1.252, port=40001]
+[m[2;32m2014-10-10 17:24:53,144 - INFO  [main:Container@119] - remote server was init.Resource [name=data, host=192.168.1.252, port=50001]
+[m[2;37m2014-10-10 17:24:55,036 - DEBUG [RequestThread-1:RequestThread$WorkThread@79] - 0@@@@@@@@@@null
+[m[2;37m2014-10-10 17:24:55,037 - DEBUG [RequestThread-1:RequestThread$WorkThread@60] - 0-->received clinet message:null
+[m[2;37m2014-10-10 17:24:57,039 - DEBUG [RequestThread-1:RequestThread$WorkThread@79] - 0@@@@@@@@@@null
+[m[2;37m2014-10-10 17:24:57,039 - DEBUG [RequestThread-1:RequestThread$WorkThread@60] - 0-->received clinet message:null
+[m[2;37m2014-10-10 17:24:59,041 - DEBUG [RequestThread-1:RequestThread$WorkThread@79] - 0@@@@@@@@@@null
+[m[2;37m2014-10-10 17:24:59,041 - DEBUG [RequestThread-1:RequestThread$WorkThread@60] - 0-->received clinet message:null
+[m[2;37m2014-10-10 17:25:01,043 - DEBUG [RequestThread-1:RequestThread$WorkThread@79] - 0@@@@@@@@@@null
+[m[2;37m2014-10-10 17:25:01,043 - DEBUG [RequestThread-1:RequestThread$WorkThread@60] - 0-->received clinet message:null
+[m[2;37m2014-10-10 17:25:01,550 - DEBUG [pool-4-thread-4:RequestThread@115] - client msg len:1
+[m[2;37m2014-10-10 17:25:01,551 - DEBUG [RequestThread-1:RequestThread$WorkThread@79] - 0@@@@@@@@@@RequestInfo [id=4fd67cb42498484788c9888b8dc965a2, time=1412933101169, sn=UserService.login, data={userID=111, sex=true, userName=hah 哈哈===0}]
+[m[2;37m2014-10-10 17:25:01,558 - DEBUG [RequestThread-1:RequestThread$WorkThread@60] - 0-->received clinet message:RequestInfo [id=4fd67cb42498484788c9888b8dc965a2, time=1412933101169, sn=UserService.login, data={userID=111, sex=true, userName=hah 哈哈===0}]
+[m[2;37m2014-10-10 17:25:01,591 - DEBUG [RequestThread-1:ResponseThread@64] - send msg len:1
+[m[2;35m2014-10-10 17:25:01,594 - WARN  [ResponseThread-1:JSONObject@950] - Property 'channel' of class com.hqch.simple.netty.io.ResponseInfo has no read method. SKIPPED
+[m[2;37m2014-10-10 17:25:01,596 - DEBUG [ResponseThread-1:ResponseThread$WorkThread@82] - 0-->send clinet message:ResponseInfo [serviceID=login, data=登录成功]
+[m[2;37m2014-10-10 17:25:03,592 - DEBUG [RequestThread-1:RequestThread$WorkThread@79] - 0@@@@@@@@@@null
+[m[2;37m2014-10-10 17:25:03,592 - DEBUG [RequestThread-1:RequestThread$WorkThread@60] - 0-->received clinet message:null
+[m[2;37m2014-10-10 17:25:05,593 - DEBUG [RequestThread-1:RequestThread$WorkThread@79] - 0@@@@@@@@@@null
+[m[2;37m2014-10-10 17:25:05,593 - DEBUG [RequestThread-1:RequestThread$WorkThread@60] - 0-->received clinet message:null
+[m[2;37m2014-10-10 17:25:07,595 - DEBUG [RequestThread-1:RequestThread$WorkThread@79] - 0@@@@@@@@@@null
+[m[2;37m2014-10-10 17:25:07,595 - DEBUG [RequestThread-1:RequestThread$WorkThread@60] - 0-->received clinet message:null
+[m[7;31m2014-10-10 17:27:09,503 - ERROR [main:Container@63] - startup error for /js/startup.js
+[mjava.lang.NullPointerException
+	at java.io.Reader.<init>(Reader.java:61)
+	at java.io.InputStreamReader.<init>(InputStreamReader.java:55)
+	at com.hqch.simple.container.Container.initScript(Container.java:77)
+	at com.hqch.simple.container.Container.init(Container.java:61)
+	at server.Test.main(Test.java:11)
