@@ -44,4 +44,8 @@ public class UserService implements GameService{
 		
 		context.getSession().sendMessage("login", "登录成功");
 	}
+	
+	public void heartbeat(ServiceContext context){
+		System.out.println("#########");
+	}
 }

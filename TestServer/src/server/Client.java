@@ -28,7 +28,7 @@ public class Client {
 		System.out.println(response);
 		
 		Client client = new Client();
-		for(int i = 0;i < 2000;i++){
+		for(int i = 0;i < 20;i++){
 			client.test(i);
 //			Thread.sleep(200);
 		}
@@ -53,7 +53,12 @@ public class Client {
 				
 				RequestInfo info = new RequestInfo();
 				info.setId(UUID.randomUUID().toString().replace("-", ""));
-				info.setSn("UserService.login");
+				if(i % 2 == 0){
+					info.setSn("UserService.login");
+				} else {
+					info.setSn("UserService.heartbeat");
+				}
+				
 				info.setTime(System.currentTimeMillis());
 				
 				Map<String, Object> data = new HashMap<String, Object>();

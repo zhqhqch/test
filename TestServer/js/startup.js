@@ -3,13 +3,13 @@ importPackage(com.hqch.simple.server);
 
 //注册缓存
 var caches = new Resource();
-caches.host = "192.168.1.252";
+caches.host = "127.0.0.1";
 caches.port = 11111;
-$.registerCache("cache", caches);
+//$.registerCache("cache", caches);
 
 //配置rmi
 var rmi = new Resource();
-rmi.host = "192.168.1.252";
+rmi.host = "127.0.0.1";
 rmi.port = 10001;
 $.initRemote(rmi);
 
@@ -22,11 +22,11 @@ $.initServer(server);
 //配置rmi提供调用的server
 var remoteList = [ {
 	name : "system",
-	host : "192.168.1.252",
+	host : "127.0.0.1",
 	port : 40001
 }, {
 	name : "data",
-	host : "192.168.1.252",
+	host : "127.0.0.1",
 	port : 50001
 } ];
 
