@@ -12,9 +12,10 @@ import java.util.UUID;
 import net.sf.json.JSONObject;
 
 
-import com.hqch.simple.StringUtil;
+
 import com.hqch.simple.netty.io.RequestInfo;
 import com.hqch.simple.netty.io.ResponseInfo;
+import com.hqch.simple.util.StringUtil;
 
 public class Client {
 
