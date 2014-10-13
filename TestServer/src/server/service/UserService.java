@@ -1,5 +1,8 @@
 package server.service;
 
+import action.TestAction;
+
+import com.hqch.simple.container.Container;
 import com.hqch.simple.server.GameService;
 import com.hqch.simple.server.ServiceContext;
 import com.hqch.simple.server.Synchronized;
@@ -42,10 +45,18 @@ public class UserService implements GameService{
 //			e.printStackTrace();
 //		}
 		
-		context.getSession().sendMessage("login", "登录成功");
+		context.sendMessage("login", "登录成功");
 	}
 	
 	public void heartbeat(ServiceContext context){
 		System.out.println("#########");
+	}
+	
+	public void test(ServiceContext context){
+		String name = context.getAsString("name");
+		TestAction testAction = Container.get().
+				createRemoteAction(TestAction.class, "system");
+		
+		testAction.say(name);
 	}
 }

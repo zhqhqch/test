@@ -5,7 +5,7 @@ import server.service.UserService;
 import com.hqch.simple.container.Container;
 import com.hqch.simple.server.GameServer;
 
-public class Test {
+public class Server {
 
 	public static void main(String[] args) {
 		Container.get().init();

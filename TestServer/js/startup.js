@@ -1,4 +1,4 @@
-importPackage(com.hqch.simple.cache);
+importPackage(com.hqch.simple.resource);
 importPackage(com.hqch.simple.server);
 
 //注册缓存
@@ -6,12 +6,6 @@ var caches = new Resource();
 caches.host = "127.0.0.1";
 caches.port = 11111;
 //$.registerCache("cache", caches);
-
-//配置rmi
-var rmi = new Resource();
-rmi.host = "127.0.0.1";
-rmi.port = 10001;
-$.initRemote(rmi);
 
 //配置本server
 var server = new GameServer();
@@ -23,11 +17,11 @@ $.initServer(server);
 var remoteList = [ {
 	name : "system",
 	host : "127.0.0.1",
-	port : 40001
+	port : 10003
 }, {
 	name : "data",
 	host : "127.0.0.1",
-	port : 50001
+	port : 10004
 } ];
 
 for(var i = 0; i<remoteList.length; i++){

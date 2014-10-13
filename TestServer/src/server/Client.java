@@ -12,6 +12,7 @@ import java.util.UUID;
 import net.sf.json.JSONObject;
 
 
+import com.hqch.simple.StringUtil;
 import com.hqch.simple.netty.io.RequestInfo;
 import com.hqch.simple.netty.io.ResponseInfo;
 
@@ -28,7 +29,7 @@ public class Client {
 		System.out.println(response);
 		
 		Client client = new Client();
-		for(int i = 0;i < 20;i++){
+		for(int i = 0;i < 1;i++){
 			client.test(i);
 //			Thread.sleep(200);
 		}
@@ -52,11 +53,11 @@ public class Client {
 				Socket client = new Socket("localhost", 10002);
 				
 				RequestInfo info = new RequestInfo();
-				info.setId(UUID.randomUUID().toString().replace("-", ""));
-				if(i % 2 == 0){
+				info.setId(StringUtil.generateID());
+				if(i % 2 == 1){
 					info.setSn("UserService.login");
 				} else {
-					info.setSn("UserService.heartbeat");
+					info.setSn("UserService.test");
 				}
 				
 				info.setTime(System.currentTimeMillis());
@@ -65,7 +66,7 @@ public class Client {
 				
 				
 				OutputStream out = client.getOutputStream();
-				for(int j = 0;j<3;j++){
+				for(int j = 0;j<1;j++){
 					data.put("userID", 111);
 					data.put("userName", i + "hah 哈哈" + "===" + j);
 					System.out.println(i + "$$$$" + j);
