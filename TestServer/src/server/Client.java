@@ -1,17 +1,13 @@
 package server;
 
 import java.io.BufferedReader;
-import java.io.DataInputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
 
 import net.sf.json.JSONObject;
-
-
 
 import com.hqch.simple.netty.io.RequestInfo;
 import com.hqch.simple.netty.io.ResponseInfo;
@@ -72,6 +68,7 @@ public class Client {
 					data.put("userName", i + "hah 哈哈" + "===" + j);
 					System.out.println(i + "$$$$" + j);
 					data.put("sex", true);
+					data.put("name", i + "三的经费和" + "===" + j);
 					info.setData(data);
 					String msg = JSONObject.fromObject(info).toString() + "\n";
 					out.write((msg).getBytes("UTF-8"));
