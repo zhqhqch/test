@@ -1,5 +1,6 @@
 package server.service;
 
+import vo.User;
 import action.TestAction;
 
 import com.hqch.simple.container.Container;
@@ -57,6 +58,9 @@ public class UserService implements GameService{
 		TestAction testAction = Container.get().
 				createRemoteAction(TestAction.class, "system");
 		
-		testAction.say(name);
+		User user = testAction.say(name);
+//		String user = testAction.test(name);
+		System.out.println(user + "###############");
+		context.sendMessage("test", user);
 	}
 }
