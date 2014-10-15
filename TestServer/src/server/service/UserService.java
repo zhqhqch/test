@@ -40,7 +40,7 @@ public class UserService implements GameService{
 		String userName = context.getAsString("userName");
 		int age = context.getAsInt(false, "age");
 		boolean sex = context.getAsBoolean(true, "sex");
-		
+		context.getSession().put("ggg", "dddddd");
 		System.out.println(userName + "---" + age + "----" + sex);
 		
 //		try {
@@ -50,6 +50,8 @@ public class UserService implements GameService{
 //		}
 		
 		context.sendMessage("login", "登录成功");
+		
+		System.out.println(context.getSession().get("ggg"));
 	}
 	
 	public void heartbeat(ServiceContext context){

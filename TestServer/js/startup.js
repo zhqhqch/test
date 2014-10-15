@@ -2,15 +2,17 @@ importPackage(com.hqch.simple.resource);
 importPackage(com.hqch.simple.server);
 
 //注册缓存
-var caches = new Resource();
-caches.host = "127.0.0.1";
-caches.port = 11111;
-//$.registerCache("cache", caches);
+var cacheds = new Resource();
+cacheds.host = "127.0.0.1";
+cacheds.port = 11111;
+$.registerCache("cached", cacheds);
 
 //配置本server
 var server = new GameServer();
 server.port = 10002;
 server.protocol = "json";
+server.synchroData = true;
+server.cachedName = "cached";
 $.initServer(server);
 
 //配置rmi提供调用的server
