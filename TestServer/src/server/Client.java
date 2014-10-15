@@ -54,7 +54,7 @@ public class Client {
 				if(i % 2 == 1){
 					info.setSn("UserService.login");
 				} else {
-					info.setSn("UserService.test");
+					info.setSn("UserService.game");
 				}
 				
 				info.setTime(System.currentTimeMillis());

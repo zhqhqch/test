@@ -1,9 +1,12 @@
 package server.service;
 
+import java.util.concurrent.TimeUnit;
+
 import vo.User;
 import action.TestAction;
 
 import com.hqch.simple.container.Container;
+import com.hqch.simple.server.GameRoom;
 import com.hqch.simple.server.GameService;
 import com.hqch.simple.server.ServiceContext;
 import com.hqch.simple.server.Synchronized;
@@ -62,5 +65,11 @@ public class UserService implements GameService{
 //		String user = testAction.test(name);
 		System.out.println(user + "###############");
 		context.sendMessage("test", user);
+	}
+	
+	
+	public void game(ServiceContext context){
+		GameRoom gameRoom = Container.get().createGameRoom("aaaaaaaaa");
+		gameRoom.scheduleAtFixedRate(new PKRunnable(3, 10, TimeUnit.SECONDS));
 	}
 }
