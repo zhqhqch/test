@@ -1,6 +1,9 @@
 importPackage(com.hqch.simple.resource);
 importPackage(com.hqch.simple.server);
 
+//日志级别 默认 DUBUG
+$.setLogLevel("INFO");
+
 //注册缓存
 var cacheds = new Resource();
 cacheds.host = "127.0.0.1";

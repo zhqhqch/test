@@ -52,7 +52,7 @@ public class Client {
 				RequestInfo info = new RequestInfo();
 				info.setId(StringUtil.generateID());
 				if(i % 2 == 0){
-					info.setSn("UserService.login");
+					info.setSn("UserService.test");
 				} else {
 					info.setSn("UserService.game");
 				}
