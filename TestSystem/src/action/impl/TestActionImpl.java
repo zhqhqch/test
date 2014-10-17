@@ -25,8 +25,8 @@ public class TestActionImpl implements TestAction {
 //		dao.insert1();
 //		dao.insert2();
 		
-		int i = 1/0;
-		System.out.println(i);
+//		int i = 1/0;
+//		System.out.println(i);
 		return user;
 	}
 

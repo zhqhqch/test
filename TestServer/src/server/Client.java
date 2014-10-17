@@ -15,6 +15,8 @@ import com.hqch.simple.util.StringUtil;
 
 public class Client {
 
+	private static long time = 0;
+	
 	public static void main(String[] args) throws Exception {
 		ResponseInfo response = new ResponseInfo();
 		response.setServiceID("userService.login");
@@ -26,7 +28,7 @@ public class Client {
 		System.out.println(response);
 		
 		Client client = new Client();
-		for(int i = 0;i < 1;i++){
+		for(int i = 0;i < 1000;i++){
 			client.test(i);
 //			Thread.sleep(200);
 		}
@@ -54,14 +56,14 @@ public class Client {
 				if(i % 2 == 0){
 					info.setSn("UserService.test");
 				} else {
-					info.setSn("UserService.game");
+					info.setSn("UserService.login");
 				}
 				
 				info.setTime(System.currentTimeMillis());
 				
 				Map<String, Object> data = new HashMap<String, Object>();
 				
-				
+				long start = System.currentTimeMillis();
 				OutputStream out = client.getOutputStream();
 				for(int j = 0;j<1;j++){
 					data.put("userID", 111);
@@ -79,15 +81,22 @@ public class Client {
 				BufferedReader br = new BufferedReader(new InputStreamReader(
 						client.getInputStream()));
 				String msg = null;
-				while ((msg = br.readLine()) != null)
+				
+				long end = System.currentTimeMillis();
+				long temp = end - start;
+				System.out.println("=======" + temp);
+				time += temp;
+				
+				while ((msg = br.readLine()) != null){
 					System.out.println(msg);
+				}
 //				
 				br.close();
 				out.close();
 			} catch (Exception e){
 				System.out.println(e.getMessage());
 			}
-			
+			System.out.println("!!!!!!!!!" + time);
 		}
 		
 	}
