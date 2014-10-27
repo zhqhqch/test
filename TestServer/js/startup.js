@@ -13,7 +13,7 @@ $.registerCache("cached", cacheds);
 //配置本server
 var server = new GameServer();
 server.port = 10002;
-server.protocol = "json";
+server.protocol = "json";//protobuf json
 server.synchroData = true;
 server.cachedName = "cached";
 $.initServer(server);

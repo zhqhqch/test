@@ -1,0 +1,10 @@
+package protobuf;
+
+option java_package = "vo";
+option java_outer_classname = "DemoBuf";
+
+
+message Demo {
+	required int32 id = 1;
+	required string name = 2;
+}

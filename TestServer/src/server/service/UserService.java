@@ -6,6 +6,8 @@ import vo.User;
 import action.TestAction;
 
 import com.hqch.simple.container.Container;
+import com.hqch.simple.container.GameSession;
+import com.hqch.simple.container.Notification;
 import com.hqch.simple.server.GameRoom;
 import com.hqch.simple.server.GameService;
 import com.hqch.simple.server.ServiceContext;
@@ -56,6 +58,13 @@ public class UserService implements GameService{
 	
 	public void heartbeat(ServiceContext context){
 		System.out.println("#########");
+		Container.get().listener(new Notification() {
+			
+			@Override
+			public void handler(GameSession session) {
+				System.out.println(session.getSessionID() + "===" + session.get("name"));
+			}
+		});
 	}
 	
 	public void test(ServiceContext context){
