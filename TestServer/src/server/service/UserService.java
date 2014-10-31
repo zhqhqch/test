@@ -6,8 +6,10 @@ import vo.User;
 import action.TestAction;
 
 import com.hqch.simple.container.Container;
+import com.hqch.simple.container.GameNotification;
 import com.hqch.simple.container.GameSession;
 import com.hqch.simple.container.Notification;
+import com.hqch.simple.rpc.NotifEvent;
 import com.hqch.simple.server.GameRoom;
 import com.hqch.simple.server.GameService;
 import com.hqch.simple.server.ServiceContext;
@@ -19,6 +21,13 @@ public class UserService implements GameService{
 	public void beforeService(ServiceContext context) {
 		// TODO Auto-generated method stub
 		
+		Container.get().listener(new GameNotification() {
+			
+			@Override
+			public void onNotification(NotifEvent event) {
+				System.out.println(event.getType() + "######3" + event.getObj());
+			}
+		});
 	}
 
 	@Override
@@ -63,6 +72,15 @@ public class UserService implements GameService{
 			@Override
 			public void handler(GameSession session) {
 				System.out.println(session.getSessionID() + "===" + session.get("name"));
+			}
+		});
+		
+		
+		Container.get().listener(new GameNotification() {
+			
+			@Override
+			public void onNotification(NotifEvent event) {
+				System.out.println(event.getType() + "######3" + event.getObj());
 			}
 		});
 	}

@@ -2,7 +2,10 @@ package action.impl;
 
 import com.hqch.simple.container.Container;
 import com.hqch.simple.resource.sql.ConnectionResource;
+import com.hqch.simple.rpc.NotifEvent;
+import com.hqch.simple.rpc.NotificationManager;
 import com.hqch.simple.rpc.Transaction;
+import com.hqch.simple.rpc.server.RPCServer;
 
 import dao.TestDao;
 import vo.User;
@@ -27,6 +30,15 @@ public class TestActionImpl implements TestAction {
 		
 //		int i = 1/0;
 //		System.out.println(i);
+		
+		RPCServer server = (RPCServer) Container.get().getServer("RPCServer");
+		NotificationManager manager = server.getNotificationManager();
+		
+		NotifEvent event = new NotifEvent();
+		event.setType(-111);
+		event.setObj(user);
+		
+		manager.sendNotif(event);
 		return user;
 	}
 
