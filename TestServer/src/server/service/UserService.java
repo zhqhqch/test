@@ -20,14 +20,6 @@ public class UserService implements GameService{
 	@Override
 	public void beforeService(ServiceContext context) {
 		// TODO Auto-generated method stub
-		
-		Container.get().listener(new GameNotification() {
-			
-			@Override
-			public void onNotification(NotifEvent event) {
-				System.out.println(event.getType() + "######3" + event.getObj());
-			}
-		});
 	}
 
 	@Override

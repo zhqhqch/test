@@ -31,7 +31,7 @@ public class Client {
 		System.out.println(response);
 		
 		Client client = new Client();
-		for(int i = 0;i < 1;i++){
+		for(int i = 0;i < 1000;i++){
 			client.test(i);
 //			Thread.sleep(200);
 		}
@@ -64,11 +64,10 @@ public class Client {
 				
 				info.setTime(System.currentTimeMillis());
 				
-				List<RequestParam> data = new ArrayList<RequestParam>();
-				
 				long start = System.currentTimeMillis();
 				OutputStream out = client.getOutputStream();
 				for(int j = 0;j<1;j++){
+					List<RequestParam> data = new ArrayList<RequestParam>();
 					data.add(new RequestParam("userID", 111));
 					data.add(new RequestParam("userName", i + "hah 哈哈" + "===" + j));
 					System.out.println(i + "$$$$" + j);
@@ -79,6 +78,7 @@ public class Client {
 					out.write((msg).getBytes("UTF-8"));
 					out.flush();
 //					Thread.sleep(200);
+//					client = new Socket("localhost", 10002);
 				}
 				
 				BufferedReader br = new BufferedReader(new InputStreamReader(
