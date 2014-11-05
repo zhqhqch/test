@@ -31,7 +31,7 @@ public class Client {
 		System.out.println(response);
 		
 		Client client = new Client();
-		for(int i = 0;i < 1000;i++){
+		for(int i = 0;i < 1;i++){
 			client.test(i);
 //			Thread.sleep(200);
 		}
@@ -56,7 +56,7 @@ public class Client {
 				
 				RequestInfo info = new RequestInfo();
 				info.setId(StringUtil.generateID());
-				if(i % 2 == 0){
+				if(i % 2 == 1){
 					info.setSn("UserService.test");
 				} else {
 					info.setSn("UserService.login");
@@ -66,7 +66,7 @@ public class Client {
 				
 				long start = System.currentTimeMillis();
 				OutputStream out = client.getOutputStream();
-				for(int j = 0;j<1;j++){
+				for(int j = 0;j<10;j++){
 					List<RequestParam> data = new ArrayList<RequestParam>();
 					data.add(new RequestParam("userID", 111));
 					data.add(new RequestParam("userName", i + "hah 哈哈" + "===" + j));

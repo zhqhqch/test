@@ -53,8 +53,9 @@ public class UserService implements GameService{
 //		}
 		
 		context.sendMessage("login", "登录成功");
-		
+//		context.getSession().invalidate();
 		System.out.println(context.getSession().get("ggg"));
+//		context.sendMessage("aa", "fff");
 	}
 	
 	public void heartbeat(ServiceContext context){
